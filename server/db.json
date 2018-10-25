@@ -1,0 +1,73 @@
+{
+  "login": {
+    "account": "admin",
+    "password": "123456"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "aaa": [
+    {
+      "account": "admin",
+      "password": "123456"
+    }
+  ],
+  "user": [
+    {
+      "name": "admin1",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 1
+    },
+    {
+      "name": "user1",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 2
+    },
+    {
+      "name": "user2",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 3
+    },
+    {
+      "name": "user3",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 4
+    },
+    {
+      "name": "user4",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 5
+    },
+    {
+      "name": "user5",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 6
+    },
+    {
+      "name": "user6",
+      "phone": "0905777888",
+      "gender": "man",
+      "id": 7
+    }
+  ]
+}

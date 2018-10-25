@@ -1,0 +1,24 @@
+.card-login {
+  width: 50%;
+  margin: auto;
+  min-width: 500px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.mat-card-actions {
+  display: flex;
+  button {
+    flex: 1;
+    margin: 10px;
+  }
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}

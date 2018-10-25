@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "test",
+      "author": "test"
+    },
+    {
+      "title": "test",
+      "author": "test",
+      "id": 3
+    }
+  ],
+  "aaa": [
+    {
+      "account": "admin",
+      "password": "123456"
+    },
+    {
+      "account": "test",
+      "password": "1234"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,24 @@
+<mat-card class="card--user-modify">
+  <div class="user-modify--title">  
+    <span class="spacer"></span>
+    <button *ngIf="type === 'modify'" mat-icon-button (click)="delete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <h2>{{type}}</h2>
+  <form class="form-user" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field class="input-user">
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="input-user">
+      <input matInput placeholder="phone" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field class="input-user">
+      <input matInput placeholder="gender" formControlName="gender">
+    </mat-form-field>
+    <div class="form-button--user">
+      <button mat-raised-button color="primary" type="submit">comfirm</button>
+      <button mat-raised-button [routerLink]="['/home']">cancel</button>
+    </div>
+  </form>
+</mat-card>

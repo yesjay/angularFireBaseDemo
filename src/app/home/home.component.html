@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Custom Toolbar</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>setting</button>
+      <button mat-menu-item (click)="logOut()">Log out</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="home">
+  <mat-tab-group>
+    <mat-tab label="User management">
+      <app-user-manager></app-user-manager> 
+    </mat-tab>
+    <mat-tab label="Article management">
+      <app-article-manager></app-article-manager>
+    </mat-tab>
+  </mat-tab-group>
+</div>
