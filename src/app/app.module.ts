@@ -6,6 +6,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -41,6 +42,7 @@ import { UserModifyComponent } from './user-modify/user-modify.component';
     AngularFireDatabaseModule, // add realtime DB module
     AngularFireStorageModule, // add cloudstore DB module
     AngularFireAuthModule, // add auth module
+    AngularFirestoreModule,
     MaterialModule,
     AppRoutingModule,
     RouterModule,

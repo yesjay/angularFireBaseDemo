@@ -13,22 +13,22 @@ export class UserService {
     private httpClient: HttpClient,
   ) { }
 
-  query(): Observable<Array<User>> {
-    return this.httpClient.get<Array<User>>('http://localhost:8000/user');
-  }
+  // query(): Observable<Array<User>> {
+  //   return this.httpClient.get<Array<User>>('http://localhost:8000/user');
+  // }
 
-  get(id: number): Observable<User> {
-    return this.httpClient.get<User>('http://localhost:8000/user/' + id);
-  }
+  // get(id: number): Observable<User> {
+  //   return this.httpClient.get<User>('http://localhost:8000/user/' + id);
+  // }
 
-  modify(model: User): Observable<User> {
-    return model.id ? 
-    this.httpClient.put<User>('http://localhost:8000/user/' + model.id, model):
-    this.httpClient.post<User>('http://localhost:8000/user/', model);
+  // modify(model: User): Observable<User> {
+  //   return model.id ? 
+  //   this.httpClient.put<User>('http://localhost:8000/user/' + model.id, model):
+  //   this.httpClient.post<User>('http://localhost:8000/user/', model);
     
-  }
+  // }
 
-  delete(model: User): Observable<User> {
-    return this.httpClient.delete<User>('http://localhost:8000/user/' + model.id)
-  }
+  // delete(model: User): Observable<User> {
+  //   return this.httpClient.delete<User>('http://localhost:8000/user/' + model.id)
+  // }
 }

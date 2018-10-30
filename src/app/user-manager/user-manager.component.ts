@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
 
-import { UserService } from '../shared/service';
 import { User } from '../shared/model/user.type';
 
 @Component({
@@ -11,16 +12,25 @@ import { User } from '../shared/model/user.type';
 export class UserManagerComponent implements OnInit {
   users: Array<User>;
   displayedColumns: Array<string>;
+  usersCollection: AngularFirestoreCollection<User>;
 
   constructor(
-    private userService: UserService,
+    private ngDataBase: AngularFirestore,
   ) { }
 
   ngOnInit() {
-    // this.userService.query().subscribe((users: Array<User>) => {
-    //   this.users = users;
-    // })
-    this.displayedColumns = ['name', 'phone', 'gender', 'editor'];
+    this.usersCollection = this.ngDataBase.collection('user');
+    this.usersCollection.valueChanges().pipe(
+      map((users: Array<User>) => {
+        return users.map(user => {
+          return user;
+        });
+      })
+    ).subscribe((users: Array<User>) => {
+      this.users = users;
+    });
+    this.usersCollection.get().subscribe(console.log);
+    this.displayedColumns = ['name', 'email', 'phone', 'gender', 'editor'];
   }
-
+ 
 }

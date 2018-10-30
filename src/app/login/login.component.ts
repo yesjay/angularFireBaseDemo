@@ -33,19 +33,6 @@ export class LoginComponent implements OnInit {
       this.model.password
     ).then(() => {
       window.location.reload();
-    });
-    
-  }
-
-  getToken() {
-    console.log(this.angularAuth.auth.currentUser);
-    this.angularAuth.authState.subscribe(res => {
-      console.log(res);
-    })
-
-  }
-
-  logout() {
-    this.angularAuth.auth.signOut();
+    });   
   }
 }
