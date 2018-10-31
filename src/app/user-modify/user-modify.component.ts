@@ -21,7 +21,6 @@ export class UserModifyComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService,
     private ngDataBase: AngularFirestore,
   ) { }
 
@@ -44,19 +43,23 @@ export class UserModifyComponent implements OnInit {
   }
 
   onSubmit() {
-    let data = this.formGroup.value;
-    if (this.model) {
-      // data.id = this.model.id;
+    const data = this.formGroup.value,
+          newId = this.ngDataBase.createId();
+    if (this.type === 'modify') {
+      data.id = this.model.id;
+    } else {
+      data.id = newId;
     }
-    // this.userService.modify(data).subscribe(() => {
-    //   this.router.navigate(['home']);
-    // })
+    this.ngDataBase.collection('user').doc(newId).set(data).then(() => {
+      this.router.navigate(['home']);
+    });
   }
 
   delete() {
-    // this.userService.delete(this.model).subscribe(() => {
-    //   this.router.navigate(['home']);
-    // });
+    this.formGroup.reset();
+    this.ngDataBase.collection('user').doc(this.model.id).delete().then(() => {
+      this.router.navigate(['home']);
+    });
   }
 
   private getType() {
