@@ -49,13 +49,13 @@ export class UserModifyComponent implements OnInit {
       data.id = this.model.id;
       this.ngDataBase.collection('user').doc(data.id).update(data).then(() => {
         this.router.navigate(['home']);
-      })
+      });
     } else {
       data.id = newId;
       this.ngDataBase.collection('user').doc(newId).set(data).then(() => {
         this.router.navigate(['home']);
       });
-    }  
+    }
   }
 
   delete() {

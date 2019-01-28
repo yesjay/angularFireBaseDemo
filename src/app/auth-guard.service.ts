@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { CookieService } from './shared/service/cookie.service';
+import { CookieService, UrlStoreService } from './shared/service';
 import { Observable } from 'rxjs';
 import { take, map, tap } from 'rxjs/operators';
 
@@ -14,6 +14,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(
     private _router: Router,
     private cookieService: CookieService,
+    private urlStoreSerivce: UrlStoreService,
     private angularAuth: AngularFireAuth,
   ) { }
 
@@ -33,11 +34,14 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+    this.urlStoreSerivce.storeSourceUrl(state.url);
+    this.urlStoreSerivce.showUrlStorage();
+    this.urlStoreSerivce.showPreviousUrl();
     const path = route.url[0].path;
     return this.angularAuth.authState.pipe(
       take(1),
       map(user => this.passCustoms(user, path))
-    ) 
+    );
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -55,7 +59,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     if (user && path === 'login') {
       this._router.navigate(['/home']);
       return false;
-    } else if (!user && path != 'login') {
+    } else if (!user && path !== 'login') {
       this._router.navigate(['./login']);
       return false;
     }

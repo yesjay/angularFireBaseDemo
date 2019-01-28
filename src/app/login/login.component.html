@@ -11,6 +11,6 @@
   </form>
   <mat-card-actions>
     <button mat-stroked-button (click)="onSubmit()">login</button>
-    <button mat-stroked-button>foget password</button>
+    <button mat-stroked-button (click)="openDialog('', 'forgetPassword')">foget password</button>
   </mat-card-actions>
 </mat-card>

@@ -6,7 +6,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { ArticleManagerComponent } from './article-manager/article-manager.component';
 import { UserModifyComponent } from './user-modify/user-modify.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -32,6 +33,10 @@ import { UserModifyComponent } from './user-modify/user-modify.component';
     UserManagerComponent,
     ArticleManagerComponent,
     UserModifyComponent,
+    DialogComponent,
+  ],
+  entryComponents: [
+    DialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -32,5 +32,5 @@ export class UserManagerComponent implements OnInit {
     this.usersCollection.get().subscribe(console.log);
     this.displayedColumns = ['name', 'email', 'phone', 'gender', 'editor'];
   }
- 
+
 }

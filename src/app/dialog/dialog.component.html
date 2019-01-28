@@ -1,0 +1,19 @@
+<div *ngIf="data.type === 'loginFail'">
+  <h1 mat-dialog-title>Warning</h1>
+  <div mat-dialog-content>
+    <p>{{data.error}}</p>
+  </div>
+  <div mat-dialog-actions class="dialog-button">
+    <button mat-button (click)="onNoClick()">continue</button>
+  </div>
+</div>
+<div *ngIf="data.type === 'forgetPassword'">
+  <h1 mat-dialog-title>You can use:</h1>
+  <div mat-dialog-content>
+    <p>account: {{data.backupEmail.account}}</p>
+    <p>password: {{data.backupEmail.password}}</p>
+  </div>
+  <div mat-dialog-actions class="dialog-button">
+    <button mat-button (click)="onNoClick()">continue</button>
+  </div>
+</div>
