@@ -6,13 +6,15 @@
   h2 {
     text-align: center;
   }
-}
-
-.mat-card-actions {
-  display: flex;
-  button {
-    flex: 1;
-    margin: 10px;
+  .card-button {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    button {
+      flex: 1;
+      margin: 10px;
+    }
   }
 }
 
@@ -21,4 +23,11 @@
   flex-direction: column;
   width: 70%;
   margin: auto;
+  .form-button {
+    display: flex;
+    button {
+      flex: 1;
+      margin: 10px;
+    }
+  }
 }

@@ -25,7 +25,6 @@ export class UrlStoreService {
   }
 
   showPreviousUrl() {
-    console.log(this.urlArray[0]);
     return this.urlArray[0];
   }
 }

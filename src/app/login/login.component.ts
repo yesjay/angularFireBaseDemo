@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
     ).then(() => {
       window.location.reload();
     }).catch((error) => {
-      this.openDialog(error, 'loginFail');
+      this.openDialog('loginFail', error);
     });
   }
 
-  openDialog(message, type): void {
+  openDialog(type, message?): void {
     let data;
     if (type === 'loginFail') {
       data = {

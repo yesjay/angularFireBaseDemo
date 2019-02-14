@@ -20,13 +20,7 @@ export class UserManagerComponent implements OnInit {
 
   ngOnInit() {
     this.usersCollection = this.ngDataBase.collection('user');
-    this.usersCollection.valueChanges().pipe(
-      map((users: Array<User>) => {
-        return users.map(user => {
-          return user;
-        });
-      })
-    ).subscribe((users: Array<User>) => {
+    this.usersCollection.valueChanges().subscribe((users: Array<User>) => {
       this.users = users;
     });
     this.usersCollection.get().subscribe(console.log);
